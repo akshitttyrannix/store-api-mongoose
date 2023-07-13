@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
+  console.log("Testing home endpoint");
   res.status(200).json({
     message: "Hey Hi! Tyrannix is here!",
   });
