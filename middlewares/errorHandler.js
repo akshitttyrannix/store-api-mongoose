@@ -1,5 +1,11 @@
 const errorHandlerMiddleware = async (err, req, res, next) => {
-  return res.status(500).json({ message: "Something went wrong, please try again" });
+  console.log(`Error: ${err.message}`);
+
+  const statusCode = err.statusCode || 500;
+  return res.status(statusCode).json({
+    status: statusCode,
+    message: "Something went wrong, Please try again later",
+  });
 };
 
 module.exports = errorHandlerMiddleware;
