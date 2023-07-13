@@ -22,7 +22,7 @@ const getAllStaticProducts = async (req, res) => {
   const staticProducts = await Product.find({ featured: true });
 
   return res.status(200).json({
-    message: "get all static products",
+    message: "Static Products fetched successfully",
     count: staticProducts.length,
     staticProducts,
   });
